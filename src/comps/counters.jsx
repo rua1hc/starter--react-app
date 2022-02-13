@@ -3,23 +3,24 @@ import React, { Component } from "react";
 import CCounter from "./counter";
 
 class Counters extends Component {
-    state = {
-        counters: [
-            { id: 1, value: 1 },
-            { id: 2, value: 2 },
-            { id: 3, value: 3 },
-            { id: 4, value: 4 },
-        ],
-    };
     render() {
         return (
             <div>
-                {this.state.counters.map((counter) => (
+                <button
+                    onClick={this.props.onReset}
+                    className="btn btn-primary btn-sm m-2"
+                >
+                    Reset
+                </button>
+                {this.props.counters.map((counter) => (
                     <CCounter
                         key={counter.id}
-                        value={counter.value}
-                        selected={true}
-                    />
+                        onAdd={this.props.onAdd}
+                        onDelete={this.props.onDelete}
+                        counter={counter}
+                    >
+                        <h4>Counter #{counter.id}</h4>
+                    </CCounter>
                 ))}
             </div>
         );

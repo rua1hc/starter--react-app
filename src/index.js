@@ -6,12 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 
 import "bootstrap/dist/css/bootstrap.css";
 
-import CCounters from "./comps/counters";
-
 ReactDOM.render(
     <React.StrictMode>
-        {/* <App /> */}
-        <CCounters />
+        <App />
+        {/* <CCounters /> */}
     </React.StrictMode>,
     document.getElementById("root")
 );
