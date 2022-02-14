@@ -4,19 +4,20 @@ import CCounter from "./counter";
 
 class Counters extends Component {
     render() {
+        const { onReset, onDelete, onAdd, counters } = this.props;
         return (
             <div>
                 <button
-                    onClick={this.props.onReset}
+                    onClick={onReset}
                     className="btn btn-primary btn-sm m-2"
                 >
                     Reset
                 </button>
-                {this.props.counters.map((counter) => (
+                {counters.map((counter) => (
                     <CCounter
                         key={counter.id}
-                        onAdd={this.props.onAdd}
-                        onDelete={this.props.onDelete}
+                        onAdd={onAdd}
+                        onDelete={onDelete}
                         counter={counter}
                     >
                         <h4>Counter #{counter.id}</h4>
